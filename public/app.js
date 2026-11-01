@@ -3,7 +3,7 @@
   const LAST_YEAR = 2026;
   const PER_ROUND = 6;
   const SAVED_KEY = "sos:saved";
-  const META_KEY = "sos:meta:v1";
+  const META_KEY = "sos:meta:v2";
   const RECENT_KEY = "sos:recent";
 
   const $ = (id) => document.getElementById(id);
@@ -42,7 +42,7 @@
     const wantArtist = norm(primaryArtist(song.artist));
     const wantTitle = norm(baseTitle(song.title));
     const scored = results
-      .filter((r) => r.previewUrl)
+      .filter((r) => r.previewUrl && norm(r.trackName).includes(wantTitle))
       .map((r) => {
         const a = norm(r.artistName), t = norm(r.trackName);
         let score = 0;
