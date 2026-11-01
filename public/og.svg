@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="0.85" cy="0.1" r="0.8">
+      <stop offset="0" stop-color="#ff5e5b" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1a0f24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="disc" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.3" stop-color="#1b1022"/><stop offset="1" stop-color="#0b0610"/>
+    </radialGradient>
+    <linearGradient id="label" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a59"/><stop offset="1" stop-color="#ff3d6e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#1a0f24"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(910 315)">
+    <circle r="250" fill="url(#disc)"/>
+    <g fill="none" stroke="#fff" stroke-opacity="0.07" stroke-width="3">
+      <circle r="225"/><circle r="200"/><circle r="175"/><circle r="150"/><circle r="128"/>
+    </g>
+    <circle r="108" fill="url(#label)"/>
+    <path transform="translate(-256 -256) scale(1) translate(0 -6)" d="M256 316 C 218 290 192 268 192 240 C 192 220 207 205 226 205 C 239 205 250 213 256 223 C 262 213 273 205 286 205 C 305 205 320 220 320 240 C 320 268 294 290 256 316 Z" fill="#fff"/>
+  </g>
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#fbf2ff">
+    <text x="80" y="150" font-size="26" font-weight="700" letter-spacing="6" fill="#ffc857">1980 — 2026</text>
+    <text x="76" y="270" font-size="112" font-weight="800" letter-spacing="-4">Save One</text>
+    <text x="76" y="385" font-size="112" font-weight="800" letter-spacing="-4" fill="#ff5e5b">Song.</text>
+    <text x="80" y="470" font-size="34" font-weight="500" fill="#b9a6c9">Six songs. Cut five. Save one.</text>
+  </g>
+  <g transform="translate(80 520)" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700">
+    <rect width="96" height="40" rx="20" fill="#ff5e5b"/><text x="48" y="27" text-anchor="middle" fill="#fff">CUT</text>
+    <rect x="108" width="96" height="40" rx="20" fill="#ff5e5b" fill-opacity="0.35"/><text x="156" y="27" text-anchor="middle" fill="#fff">CUT</text>
+    <rect x="216" width="120" height="40" rx="20" fill="#4ee6a8"/><text x="276" y="27" text-anchor="middle" fill="#0d2a1e">SAVE</text>
+  </g>
+</svg>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Save One Song</title>
+  <meta name="description" content="Pick a year from 1980 to 2026. Six songs. Cut five. Save one." />
+  <meta name="theme-color" content="#1a0f24" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta property="og:title" content="Save One Song" />
+  <meta property="og:description" content="Pick a year from 1980 to 2026. Six songs. Cut five. Save one." />
+  <meta property="og:image" content="/og.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/og.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="top">
+    <button class="brand" data-nav="home" aria-label="Save One Song home">
+      <img src="/icon.svg" alt="" width="32" height="32" />
+      <span>Save One Song</span>
+    </button>
+    <button class="saved-btn" data-nav="saved">
+      Saved <span class="count" id="savedCount">0</span>
+    </button>
+  </header>
+
+  <main id="app">
+    <!-- Home -->
+    <section id="view-home" class="view">
+      <div class="hero">
+        <p class="eyebrow">1980 — 2026</p>
+        <h1>Six songs.<br />Cut five.<br /><em>Save one.</em></h1>
+        <p class="lede">Pick a year. You'll get six big songs from it. Listen, cut the ones you can live without, and keep the one you can't.</p>
+        <button class="btn primary" id="randomYear">Surprise me with a year</button>
+      </div>
+      <div id="decades"></div>
+    </section>
+
+    <!-- Round -->
+    <section id="view-round" class="view" hidden>
+      <div class="round-head">
+        <button class="back" data-nav="home" aria-label="Back to years">←</button>
+        <div>
+          <p class="eyebrow">The class of</p>
+          <h2 id="roundYear">1985</h2>
+        </div>
+        <button class="btn ghost small" id="reshuffle">New six</button>
+      </div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <ol class="cards" id="cards"></ol>
+      <div class="save-bar" id="saveBar" hidden>
+        <button class="btn primary big" id="saveBtn">Save it</button>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section id="view-result" class="view" hidden>
+      <div class="result">
+        <p class="eyebrow" id="resultYear">Saved from 1985</p>
+        <div class="result-art"><img id="resultArt" alt="" /><div class="spin-ring"></div></div>
+        <h2 id="resultTitle"></h2>
+        <p class="result-artist" id="resultArtist"></p>
+        <div class="result-actions">
+          <button class="btn primary" id="againYear">Another round of <span id="againYearLabel"></span></button>
+          <button class="btn ghost" data-nav="home">Pick a new year</button>
+          <button class="btn ghost" data-nav="saved">See all saved</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saved -->
+    <section id="view-saved" class="view" hidden>
+      <div class="round-head">
+        <button class="back" data-nav="home" aria-label="Back to years">←</button>
+        <div>
+          <p class="eyebrow">Your keepers</p>
+          <h2>Saved songs</h2>
+        </div>
+        <span></span>
+      </div>
+      <div id="savedList"></div>
+    </section>
+  </main>
+
+  <div class="player" id="player" hidden>
+    <img id="playerArt" alt="" />
+    <div class="player-meta">
+      <strong id="playerTitle"></strong>
+      <span id="playerArtist"></span>
+      <div class="player-bar"><i id="playerProgress"></i></div>
+    </div>
+    <button class="icon-btn" id="playerToggle" aria-label="Pause">❚❚</button>
+  </div>
+
+  <script src="/songs.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
